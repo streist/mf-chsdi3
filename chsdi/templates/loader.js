@@ -9,7 +9,7 @@ if lang is None and request.accept_language:
 else:
     lang = 'de'
 
-appUrl = request.application_url.replace('http', request.scheme)
+appUrl = request.application_url.replace('http:', request.scheme + ":")
 layersconfig = appUrl + '/rest/services/all/MapServer/layersconfig?lang=' + lang
 import urllib2, json
 f = urllib2.urlopen(layersconfig)
